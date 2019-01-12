@@ -1,0 +1,276 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <!-- Basic Page Needs
+    ================================================== -->
+    <link rel="shortcut icon" href="images/LOGO2Icon.ico" />
+
+    <title>HabiPet</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- CSS
+    ================================================== -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/colors/HabiPetColor.css" id="colors">
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+    <!--<link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">;-->
+    <script type="text/javascript" src="scripts/jquery-2.2.0.min.js"></script>
+    <script type="text/javascript" src="scripts/jquery-ui.min.js"></script>
+    <script src="fullcalendar/moment.min.js"></script>
+    <script src="scripts/ajaxCalls.js"></script>
+    <script src="js/viewPetsitterProfile.js"></script>
+    <style type="text/css">
+        .closeService{
+border:double 2px #50C5B7;
+-moz-border-radius-topleft: 34px;
+-moz-border-radius-topright:35px;
+-moz-border-radius-bottomleft:35px;
+-moz-border-radius-bottomright:36px;
+-webkit-border-top-left-radius:34px;
+-webkit-border-top-right-radius:35px;
+-webkit-border-bottom-left-radius:35px;
+-webkit-border-bottom-right-radius:36px;
+border-top-left-radius:34px;
+border-top-right-radius:35px;
+border-bottom-left-radius:35px;
+border-bottom-right-radius:36px;
+float:left;
+width:110px;
+text-align:center;
+     }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Header Container
+      ================================================== -->
+        <header id="header-containerblafixed">
+            <!-- Header -->
+            <div id="header">
+                <div class="container">
+                    <!-- Left Side Content -->
+                    <div class="left-side" accesskey="">
+                        <!-- Logo -->
+                        <div id="logo">
+                            <a href="index.html">
+                                <img src="images/logo.png" />
+                            </a>
+                        </div>
+                        <div class="mmenu-trigger" style="background-color:#fff">
+                        </div>
+                   
+                        <div dir="ltr" class="floting" >
+                            <a href="index.html" dir="rtl"><i class="sl sl-icon-login"></i> התנתק</a>                         
+                        </div>
+                                    
+                        <a href="listings-list-full-width.html" style="font-size:20px; float:left"><div class="im im-icon-Left-4"> </div></a>
+
+                      
+                    </div>
+                </div>
+            </div>
+            <!-- Header / End -->
+
+        </header>
+        <div class="clearfix"></div>
+        <!-- Header Container / End -->
+        <!-- Slider
+        ================================================== -->
+        <div class="listing-slider mfp-gallery-container margin-bottom-0 margin-top-60">
+            <a href="images/single-listing-01.jpg" data-background-image="images/single-listing-01.jpg" class="item mfp-gallery" title="Title 1"></a>
+            <a href="images/single-listing-02.jpg" data-background-image="images/single-listing-02.jpg" class="item mfp-gallery" title="Title 3"></a>
+            <a href="images/single-listing-03.jpg" data-background-image="images/single-listing-03.jpg" class="item mfp-gallery" title="Title 2"></a>
+            <a href="images/single-listing-04.jpg" data-background-image="images/single-listing-04.jpg" class="item mfp-gallery" title="Title 4"></a>
+        </div>
+
+
+        <!-- Content
+        ================================================== -->
+        <div class="container">
+            <div class="row sticky-wrapper">
+                <div class="col-lg-8 col-md-8 padding-right-30" style="z-index:0">
+               
+                    <!-- Order service Popup -->
+                    <div id="sign-in-dialog" class="zoom-anim-dialog mfp-hide">
+                        <div class="small-dialog-header">
+                            <h3>סגור שירות</h3>
+                            <h4>וודא את פרטי השירות הרצוי</h4>
+                        </div>
+                        <div class="sign-in-form style-1" dir="rtl">
+                            <div class="tabs-container alt">
+                                <form method="post" class="register">
+                                    <p class="form-row form-row-wide">
+                                        <label for="username2">
+                                            השירות:
+                                            <i class="im im-icon-Dog"></i>
+                                            <input type="text" class="input-text" name="username" id="selectedService" value="" disabled />
+                                        </label>
+                                    </p>
+
+                                    <p class="form-row form-row-wide">
+                                        <label for="email2">
+                                            תאריך התחלה
+                                            <i class="im im-icon-Calendar-3"></i>
+                                            <input type="text" class="input-text" name="email" id="selectedStartDate" value="" disabled />
+                                        </label>
+                                    </p>
+
+                                    <p class="form-row form-row-wide">
+                                        <label for="password1">
+                                            תאריך סיום
+                                            <i class="im im-icon-Calendar-3"></i>
+                                            <input class="input-text" type="password" name="password1" id="selectedEndDate" disabled />
+                                        </label>
+                                    </p>
+
+                                    <p class="form-row form-row-wide">
+                                        <label for="password2">
+                                            משעה:
+                                            <i class="im im-icon-Hour"></i>
+                                            <input type="text" id="booking-time" value="9:00 am" dir="ltr">
+                                        </label>
+                                    </p>
+
+                                    <p class="form-row form-row-wide">
+                                        <label for="password2">
+                                            עד שעה:
+                                            <i class="im im-icon-Hour"></i>
+                                            <input type="text" id="booking-time2" value="12:00 am" dir="ltr">
+                                        </label>
+                                    </p>
+                                    <input type="submit" class="button border fw margin-top-10" name="register" value="הזמן שירות" />
+
+                                </form>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- Order Service Popup / End -->
+                    <!-- Titlebar -->
+                    <div id="titlebar" class="listing-titlebar">
+                        <!--dynamic petsitter details will added here-->
+                    </div>
+                    <div class="closeService" style="float:left">
+                        <a href="#sign-in-dialog" class="sign-in popup-with-zoom-anim">הזמן שירות <i class="im im-icon-Dog"></i> </a>
+                    </div>
+
+                    <!-- Overview -->
+                    <div id="listing-overview" class="listing-section">
+                        <!--dynamic about details will added here-->
+                    </div>
+
+                    <!-- pricing List -->
+                    <div id="listing-pricing-list" class="listing-section">
+                        <!--dynamic pricing-list will added here-->
+                    </div>
+                    <!-- pricing List / End -->
+
+                    <!--petsiter animals / start-->
+                    <div id="petssiterPetList" class="row">
+                        <!--dynamic pets list will added here-->
+                    </div>
+                    <!--petsiter animals end-->
+
+                    <!-- Reviews -->
+                    <div id="listing-reviews" class="listing-section">
+
+                        <!--dynamic reviews will added here-->
+                        <!-- Pagination -->
+                        <div class="clearfix"></div>
+                        <!-- Pagination / End -->
+                    </div>
+
+
+                    <!-- Add Review Box -->
+                    <div id="add-review" class="add-review-box">
+
+                        <!-- Add Review -->
+                        <h3 class="listing-desc-headline margin-bottom-10">הוסף ביקורת</h3>
+
+                        <!-- Rating / Upload Button -->
+                        <div class="row">
+                            <div class="col-md-6">
+                                <!-- Leave Rating -->
+                                <div class="clearfix"></div>
+                                <div class="leave-rating margin-bottom-10">
+                                    <input type="radio" name="rating" id="rating-5" value="5" />
+                                    <label for="rating-5" class="fa fa-star"></label>
+                                    <input type="radio" name="rating" id="rating-4" value="4" />
+                                    <label for="rating-4" class="fa fa-star"></label>
+                                    <input type="radio" name="rating" id="rating-3" value="3" />
+                                    <label for="rating-3" class="fa fa-star"></label>
+                                    <input type="radio" name="rating" id="rating-2" value="2" />
+                                    <label for="rating-2" class="fa fa-star"></label>
+                                    <input type="radio" name="rating" id="rating-1" value="1" />
+                                    <label for="rating-1" class="fa fa-star"></label>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+
+                        <!-- Review Comment -->
+                        <form id="add-comment" class="add-comment">
+                            <fieldset>
+                                <div>
+                                    <label>ביקורת:</label>
+                                    <textarea id='reviewText' cols="40" rows="2"></textarea>
+                                </div>
+                            </fieldset>
+                            <button id="ReviewSubmit" class="button">שמור ביקורת</button>
+                            <div class="clearfix"></div>
+                        </form>
+
+                    </div>
+                    <!-- Add Review Box / End -->
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer
+     ================================================== -->
+        <div class="mynavbar">
+            <a href="SearchPage.html">
+                <div class="im im-icon-Search-People"> </div>
+            </a>
+
+            <a href="ChatPage.html" style="font-size:30px">
+                <div class="im im-icon-Speach-Bubbles"> </div>
+            </a>
+            <a href="calanderPage.html">
+                <div class="im im-icon-Calendar-4"></div>
+            </a>
+            <a href="FavoritesPage.html">
+                <div class="im im-icon-Heart"></div>
+            </a>
+            <a href="UserProfile.html">
+                <div class="im im-icon-Boy"></div>
+            </a>
+        </div>
+        <!-- Footer / End -->
+
+    </div>
+    <!-- Wrapper / End -->
+    <!-- Scripts
+    ================================================== -->
+    
+    <script type="text/javascript" src="scripts/mmenu.min.js"></script>
+    <script type="text/javascript" src="scripts/chosen.min.js"></script>
+    <script type="text/javascript" src="scripts/slick.min.js"></script>
+    <script type="text/javascript" src="scripts/rangeslider.min.js"></script>
+    <script type="text/javascript" src="scripts/magnific-popup.min.js"></script>
+    <script type="text/javascript" src="scripts/waypoints.min.js"></script>
+    <script type="text/javascript" src="scripts/counterup.min.js"></script>
+  
+    <script type="text/javascript" src="scripts/tooltips.min.js"></script>
+    <script type="text/javascript" src="scripts/mustache.js"></script>
+    <script type="text/javascript" src="scripts/custom.js"></script>
+ 
+</body>
+</html>

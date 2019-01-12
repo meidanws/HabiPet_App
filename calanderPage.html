@@ -1,0 +1,153 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="fullcalendar/fullcalendar.min.css" rel="stylesheet" />
+    <link href="fullcalendar/fullcalendar.css" rel="stylesheet" />
+    <link href="fullcalendar/fullcalendar.print.min.css" rel="stylesheet" media='print' />
+    <!--<link href="fullcalendar/fullcalendar.print.css" rel="stylesheet" />-->
+    <script src="fullcalendar/moment.min.js"></script>
+    <script src="fullcalendar/jquery.min.js"></script>
+    <script src="fullcalendar/jquery-ui.min.js"></script>
+    <!--<script src="fullcalendar/fullcalendar.js"></script>-->
+    <script src="fullcalendar/fullcalendar.min.js"></script>
+    <script src="fullcalendar/he.js"></script>
+    <link rel="stylesheet" href="css/colors/HabiPetColor.css" id="colors">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+    <script src="scripts/ajaxCalls.js"></script>
+    <script src="fullcalendar/moment-with-locales.min.js"></script>
+    <script src="js/calendarPage.js"></script>
+
+    <style>
+        body {
+            margin: 40px 10px;
+            padding: 0;
+            overflow-x:hidden;
+        }
+
+        #wrapper{overflow-x:hidden}
+        #calendar {
+            max-height:500px;
+            margin-top:58px
+           
+        }
+
+        #calendarList {
+            margin: 0 auto;
+        }
+
+        #eventDayList {
+            max-height: 500px;
+            overflow: auto;
+        }
+
+         .fc-day-grid-container{
+            overflow-y:hidden !important;
+            height:281px !important;
+            
+        }
+
+        .fc-center h2{
+            color:#50C5B7
+        }
+        .fc-day-header{
+            height:20px;
+        }
+        .fc-view {
+            color:#50C5B7;
+
+        }
+
+
+    </style>
+
+</head>
+<body>
+    <div id="wrapper">
+        <!-- Header Container
+    ================================================== -->
+        <header id="header-containerblafixed">
+            <!-- Header -->
+            <div id="header">
+                <div class="container">
+                    <!-- Left Side Content -->
+                    <div class="left-side" accesskey="">
+                        <!-- Logo -->
+                        <div id="logo">
+                            <a href="index.html">
+                                <img src="images/logo.png" />
+                            </a>
+                        </div>
+                        <div class="mmenu-trigger" style="background-color:#fff">
+                        </div>
+                        <div dir="rtl" class="floting">
+                            <a href="index.html" dir="rtl"><i class="sl sl-icon-login"></i> התנתק</a>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <!-- Header / End -->
+
+        </header>
+        <div class="clearfix"></div>
+        <!-- Header Container / End -->
+        <div id='calendar'></div>
+        <div class="clearfix"></div>
+        <div class="row">
+
+            <!-- Listings -->
+            <div class="col-lg-12 col-md-12">
+                <div id="eventDayList"class="dashboard-list-box margin-top-0">
+                    
+                    <!-- Events will dynamiclly added here -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer
+    ================================================== -->
+    <div class="mynavbar">
+        <a href="SearchPage.html">
+            <div class="im im-icon-Search-People"> </div>
+        </a>
+
+        <a href="ChatPage.html" style="font-size:30px">
+            <div class="im im-icon-Speach-Bubbles"> </div>
+        </a>
+        <a href="calanderPage.html" class="active">
+            <div class="im im-icon-Calendar-4"></div>
+        </a>
+        <a href="FavoritesPage.html">
+            <div class="im im-icon-Heart"></div>
+        </a>
+        <a href="UserProfile.html">
+            <div class="im im-icon-Boy"></div>
+        </a>
+    </div>
+    <!-- Footer / End -->
+    <!-- Back To Top Button -->
+    <div id="backtotop"><a href="#header"></a></div>
+
+    <!-- Scripts
+    ================================================== -->
+    <script type="text/javascript" src="scripts/mmenu.min.js"></script>
+    <script type="text/javascript" src="scripts/chosen.min.js"></script>
+    <script type="text/javascript" src="scripts/slick.min.js"></script>
+    <script type="text/javascript" src="scripts/rangeslider.min.js"></script>
+    <script type="text/javascript" src="scripts/magnific-popup.min.js"></script>
+    <script type="text/javascript" src="scripts/waypoints.min.js"></script>
+    <script type="text/javascript" src="scripts/counterup.min.js"></script>
+    <script type="text/javascript" src="scripts/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="scripts/tooltips.min.js"></script>
+    <script type="text/javascript" src="scripts/custom.js"></script>
+
+</body>
+</html>

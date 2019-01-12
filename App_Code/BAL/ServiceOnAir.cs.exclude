@@ -1,0 +1,23 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+
+/// <summary>
+/// Summary description for ServiceOnAir
+/// </summary>
+public class ServiceOnAir
+{
+    public ServiceOnAir()
+    {
+        //
+        // TODO: Add constructor logic here
+        //
+    }
+
+    public int ServiceOnAirId { get; set; }
+    public DateTime OridainedDate { get; set; }
+    public DateTime StartTime { get; set; }
+    public DateTime EndTime { get; set; }
+    public bool Status { get; set; }
+}

@@ -1,0 +1,285 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+    <!-- Basic Page Needs
+    ================================================== -->
+    <link rel="shortcut icon" href="images/LOGO2Icon.ico" />
+
+    <title>HabiPet</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- CSS
+    ================================================== -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/colors/HabiPetColor.css" id="colors">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script type="text/javascript" src="scripts/jquery-2.2.0.min.js"></script>
+    <script type="text/javascript" src="scripts/jquery-ui.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+
+
+    <style type="text/css">
+        .mybutton {
+            color: white;
+            padding-right: 8em;
+            border: none 5px #000000;
+            -moz-border-radius-topleft: 75px;
+            -moz-border-radius-topright: 75px;
+            -moz-border-radius-bottomleft: 75px;
+            -moz-border-radius-bottomright: 75px;
+            -webkit-border-top-left-radius: 75px;
+            -webkit-border-top-right-radius: 75px;
+            -webkit-border-bottom-left-radius: 75px;
+            -webkit-border-bottom-right-radius: 75px;
+            border-top-left-radius: 75px;
+            border-top-right-radius: 75px;
+            border-bottom-left-radius: 75px;
+            border-bottom-right-radius: 75px;
+        }
+
+        .AnimalType {
+            background-size: 45px;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        #type_1 {
+            background-image: url('images/dogImg.png');
+        }
+
+        #type_2 {
+            background-image: url('images/catImg.png');
+        }
+
+        .validation {
+            color: red;
+        }
+
+        #DateAndTimeDiv{
+            display:none;
+        }
+      
+        #TimeDiv{
+             display:block;
+        }
+
+    </style>
+    <link href="https://www.jqueryscript.net/demo/Material-Time-Picker-Plugin-jQuery-MDTimePicker/mdtimepicker.css" rel="stylesheet" />
+</head>
+
+<body>
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Header Container
+      ================================================== -->
+        <header id="header-containerblafixed">
+            <!-- Header -->
+            <div id="header">
+                <div class="container">
+                    <!-- Left Side Content -->
+                    <div class="left-side" accesskey="">
+                        <!-- Logo -->
+                        <div id="logo">
+                            <a href="index.html">
+                                <img src="images/logo.png" />
+                            </a>
+                        </div>
+                        <div class="mmenu-trigger" style="background-color:#fff">
+                        </div>
+                        <div dir="rtl" class="floting">
+                            <a href="index.html" dir="rtl"><i class="sl sl-icon-login"></i> התנתק</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Header / End -->
+
+        </header>
+        <div class="clearfix"></div>
+        <!-- Header Container / End -->
+
+        <div class="listing-slider mfp-gallery-container margin-bottom-0" style="margin-top:62px">
+
+            <a href="images/img1.jpg" data-background-image="images/img1.jpg" class="item mfp-gallery" title="Title 1"></a>
+            <a href="images/img4.jpeg" data-background-image="images/img4.jpeg" class="item mfp-gallery" title="Title 2"></a>
+            <a href="images/img5.jpeg" data-background-image="images/img5.jpeg" class="item mfp-gallery" title="Title 4"></a>
+        </div>
+
+        <!-- Banner
+        ================================================== -->
+        <div class="main-search-container" style="direction:rtl">
+            <div class="main-search-inner">
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h4>מצא את הפטסיטר המושלם עבורך</h4>
+
+                            <div id="animalTypeDiv" style="text-align:center" class="main-search-input-item">
+                                <input id="type_1" type="button" class="searchInput AnimalType" value="." onclick="GetAnimalType(this.id)" />
+                                <input id="type_2" type="button" class="searchInput AnimalType" value="." onclick="GetAnimalType(this.id)" />
+                            </div>
+
+                            <div id="sizeDiv" style="text-align:center">
+                                <div class="main-search-input v3" id="SizeOfDogs">
+                                    <select id="selectedSize" data-placeholder="בחר גודל כלב" class="chosen-select mybutton">
+                                        <option value="-1">בחר גודל כלב</option>
+                                        <option value="5">קטן</option>
+                                        <option value="3">בינוני</option>
+                                        <option value="2">גדול</option>
+                                        <option value="1">ענק</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <h5>כשאתה בעבודה:</h5>
+                            <div id ="service_1Div"class="main-search-input-item">
+                                <input type="button" id="service_1" value="הביפט טיול" onclick="ChoosenService(this.id)" />
+                                <p class="ServiceToolTip"> טיול יומי - 45 דקות </p>
+                            </div>
+                            <div class="main-search-input-item">
+                                <input type="button" id="service_2" value="הביפט יומי" onclick="ChoosenService(this.id)" />
+                                <p class="ServiceToolTip"> ביקור יומי - 60 דקות </p>
+                            </div>
+                            <div class="clearfix"></div>
+
+                            <h5>כשאתה לא נמצא:</h5>
+                            <div id ="service_2Div" class="main-search-input-item">
+                                <input type="button" id="service_3" value="הביפט אירוח" onclick="ChoosenService(this.id)" />
+                                <p class="ServiceToolTip"> אירוח אצל נותן שירות </p>
+                            </div>
+                            <div class="main-search-input-item">
+
+                                <input type="button" id="service_4" value="הביפט בבית" onclick="ChoosenService(this.id)" />
+                                <p class="ServiceToolTip"> שירות בבית שלי</p>
+                            </div>
+                            <div class="clearfix"></div>
+
+
+                            <div id="DateAndTimeDiv">
+                                <br />
+                                <div id="DateDiv">
+                                    <p>בחר תאריך התחלה:</p>
+                                    <div style="text-align:center">
+                                        <input type="text" id="booking-date-Start" data-lang="en" data-large-mode="true" data-large-default="true" data-min-year="2017" data-max-year="2020" data-lock="from">
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <p>בחר תאריך סיום:</p>
+                                    <div style="text-align:center">
+                                        <input type="text" id="booking-date-End" data-lang="en" data-large-mode="true" data-large-default="true" data-min-year="2017" data-max-year="2020" data-lock="from">
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="clearfix"></div>
+                                <div id="TimeDiv">
+                                    <p>בחר טווח שעות:</p>
+                                    <p> משעה <input type="text" id="booking-time" dir="ltr" data-fx-mobile="true" data-fx="false"></p>
+                                    
+                                    <p> עד שעה <input type="text" id="booking-time2" dir="ltr" data-fx-mobile="true" data-fx="false"></p>
+                                   
+                                </div>
+                            </div>
+                            <div>
+                                <input id ="priceval"class="distance-radius" type="range" min="10" max="250" step="5" value="20" data-title="">
+                            </div>
+                            <div class="clearfix"></div>
+
+                            <!--<div id="HabiPet_Daily">
+
+                               <p>בחר ימים רצויים:</p>
+                                <div style="text-align:center">
+                                    <a href="#" class="button border">יום א'</a>
+                                    <a href="#" class="button border">יום ב'</a>
+                                    <a href="#" class="button border">יום ג'</a>
+                                   <a href="#" class="button border">יום ד'</a>
+                                </div>
+                                <div style="text-align:center">
+                                   <a href="#" class="button border">יום ה'</a>
+                                    <a href="#" class="button border">יום ו'</a>
+                                    <a href="#" class="button border">יום ש'</a>
+                               </div>
+                                <div>
+                                    <input class="distance-radius" type="range" min="1" max="400" step="1" value="20" data-title="">
+                                </div>
+                            </div>-->
+                            <!--<div id="HostingDiv">
+                                <p>בחר תאריך התחלה:</p>
+                                <div style="text-align:center">
+                                    <input type="text" id="booking-date5" data-lang="en" data-large-mode="true" data-large-default="true" data-min-year="2017" data-max-year="2020" data-lock="from" onchange="StartDate(this.value)">
+                                </div>
+                                <p>בחר תאריך סיום:</p>
+                                <div style="text-align:center">
+                                    <input type="text" id="booking-date6" data-lang="en" data-large-mode="true" data-large-default="true" data-min-year="2017" data-max-year="2020" data-lock="from" onchange="EndDate(this.value)">
+                                </div>
+
+                            </div>-->
+
+                            <div style="text-align:center">
+                                <div class="main-search-input v3" id="Cities"> </div>
+                            </div>
+                            <br />
+                            <div class="searchButton">
+                                <button id="SearchButton" class="button">חיפוש</button>
+                                <br /><br />
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br />
+
+    <!-- Footer
+    ================================================== -->
+    <div class="mynavbar">
+        <a href="SearchPage.html" class="active">
+            <div class="im im-icon-Search-People"> </div>
+        </a>
+
+        <a href="ChatPage.html" style="font-size:30px">
+            <div class="im im-icon-Speach-Bubbles"> </div>
+        </a>
+        <a href="calanderPage.html">
+            <div class="im im-icon-Calendar-4"></div>
+        </a>
+        <a href="FavoritesPage.html">
+            <div class="im im-icon-Heart"></div>
+        </a>
+        <a href="UserProfile.html">
+            <div class="im im-icon-Boy"></div>
+        </a>
+    </div>
+    <!-- Footer / End -->
+    <!-- Back To Top Button -->
+    <div id="backtotop"><a href="#header"></a></div>
+    <!-- Wrapper / End -->
+    <!-- Scripts
+    ================================================== -->
+    <script type="text/javascript" src="scripts/mmenu.min.js"></script>
+    <script type="text/javascript" src="scripts/chosen.min.js"></script>
+    <script type="text/javascript" src="scripts/slick.min.js"></script>
+    <script type="text/javascript" src="scripts/rangeslider.min.js"></script>
+    <script type="text/javascript" src="scripts/magnific-popup.min.js"></script>
+    <script type="text/javascript" src="scripts/waypoints.min.js"></script>
+    <script type="text/javascript" src="scripts/counterup.min.js"></script>
+    <script type="text/javascript" src="scripts/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="scripts/tooltips.min.js"></script>
+    <script type="text/javascript" src="scripts/custom.js"></script>
+
+    <!-- Date Picker - docs: http://www.vasterad.com/docs/listeo/#!/date_picker -->
+    <link href="css/plugins/datedropper.css" rel="stylesheet" type="text/css">
+    <script src="scripts/datedropper.js"></script>
+    <script src="scripts/timedropper.js"></script>
+    <!-- Time Picker - docs: http://www.vasterad.com/docs/listeo/#!/time_picker -->
+    <script src="https://www.jqueryscript.net/demo/Material-Time-Picker-Plugin-jQuery-MDTimePicker/mdtimepicker.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/plugins/timedropper.css">
+    <script src="scripts/ajaxCalls.js"></script>
+    <script src="js/Search.js"></script>
+
+</body>
+</html>

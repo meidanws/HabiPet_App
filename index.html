@@ -1,0 +1,209 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+ 
+    <!-- Basic Page Needs
+    ================================================== -->
+    <link rel="shortcut icon" href="images/LOGO2Icon.ico" />
+
+    <title>HabiPet</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- CSS
+    ================================================== -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/colors/HabiPetColor.css" id="colors">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script type="text/javascript" src="scripts/jquery-2.2.0.min.js"></script>
+    <script src="scripts/ajaxCalls.js"></script>
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+    <script src="js/login.js"></script>
+    <script type="text/javascript" src="scripts/mmenu.min.js"></script>
+    <script type="text/javascript" src="scripts/chosen.min.js"></script>
+    <script type="text/javascript" src="scripts/slick.min.js"></script>
+    <script type="text/javascript" src="scripts/rangeslider.min.js"></script>
+    <script type="text/javascript" src="scripts/magnific-popup.min.js"></script>
+    <script type="text/javascript" src="scripts/waypoints.min.js"></script>
+    <script type="text/javascript" src="scripts/counterup.min.js"></script>
+    <script type="text/javascript" src="scripts/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="scripts/tooltips.min.js"></script>
+  
+
+    <style type="text/css">
+
+        body,html{
+            height:100%;
+        }
+
+        .warp{
+           background-color:#e2ebec;
+           /*background-image: url('images/Phone4.png');*/
+            /*background-image: url('images/approccio-al-cane.jpg');*/
+            width:100%;
+            height:100%;
+        }
+
+         @media (max-width: 619px) {
+            .warp {
+             
+                /*background-image: url('images/Phone4.png');*/
+                background-position-x: -300px;
+                width: 100%;
+                
+            }
+        }
+
+        .BGImg{
+           width:60%;
+           margin-right:auto; margin-left:auto;  
+        }
+
+        .mainSignIn{
+              width:20%;
+              margin-right:auto;
+              margin-left:auto;
+             
+        }
+
+        @media (max-width: 1191px){
+            .mainSignIn
+            {
+              width:65%;
+              margin-right:auto;
+              margin-left:auto;
+
+            }
+       
+        }
+
+          
+    </style>
+
+    <!--<script src="cordova.js"></script>-->
+    <!--<script type="text/javascript" src="http://debug.custom.com/target/target-script-min.js#some_unique_key"></script>-->
+</head>
+<body onload="checkCookie()">
+    <div class="warp">
+        <!-- Sign In Popup -->
+        <!--<div id="sign-in-dialog" class="zoom-anim-dialog mfp-hide">-->
+        <div class="BGImg">
+            <br />
+            <img src="images/logo.png" />
+        </div>
+
+
+        <div class="mainSignIn">
+            <!--<div class="small-dialog-header">
+                <h3>התחבר</h3>
+            </div>-->
+            <!--Tabs -->
+            <div class="sign-in-form style-1" dir="rtl" style="margin-top:50px">
+
+                <ul class="tabs-nav" dir="rtl">
+                    <li><a href="#tab1">התחבר</a></li>
+                    <li><a href="#tab2">הירשם</a></li>
+                </ul>
+                <div class="tabs-container alt">
+
+                    <!-- Login -->
+                    <div class="tab-content" id="tab1" style="display: none;">
+                        <form method="post" class="login" dir="rtl">
+
+                            <p class="form-row form-row-wide">
+                                <label for="username">
+                                    <i class="im im-icon-Male"></i>
+                                    <input type="text" class="input-text" name="username" id="loginEmail" placeholder="דואר אלקטרוני" />
+                                </label>
+                            </p>
+
+                            <p class="form-row form-row-wide">
+                                <label for="password">
+
+                                    <i class="im im-icon-Lock-2"></i>
+                                    <input class="input-text" type="password" name="password" id="loginPassword" placeholder="סיסמא" />
+                                </label>
+                                <span class="lost_password">
+                                    <a href="#">שכחת את הסיסמא?</a>
+                                </span>
+                            </p>
+
+                            <div class="form-row" style="text-align:center">
+                                <input type="button" class="button border margin-top-5" name="login" value="התחבר" id="loginBTN" onclick="activateAjaxLogin()" />
+                                <br /><br />
+                                <div style="text-align:center">
+                                    <div class="fb-login-button" data-max-rows="1" data-size="medium" data-button-type="continue_with" data-show-faces="true" data-auto-logout-link="false" data-use-continue-as="true" body="text-align:center"></div>
+                                </div>
+                                <div class="checkboxes margin-top-10">
+
+                                    <input id="remember-me" type="checkbox" name="check">
+                                    <label for="remember-me">זכור אותי</label>
+                                </div>
+                                <br />
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Register -->
+                    <div class="tab-content" id="tab2" style="display: none;">
+
+                        <form method="post" class="register">
+
+                            <p class="form-row form-row-wide">
+                                <label for="username2">
+
+                                    <i class="im im-icon-Male"></i>
+                                    <input id="registerName" type="text" class="input-text" name="username" placeholder="שם פרטי" />
+                                </label>
+                            </p>
+
+                            <p class="form-row form-row-wide">
+                                <label for="username2">
+
+                                    <i class="im im-icon-Male"></i>
+                                    <input id="registerLastname" type="text" class="input-text" name="username" placeholder="שם משפחה" />
+                                </label>
+                            </p>
+
+                            <p class="form-row form-row-wide">
+                                <label for="email">
+
+                                    <i class="im im-icon-Mail"></i>
+                                    <input id="registerEmail" type="text" class="input-text" name="email" placeholder="דואר אלקטרוני" />
+                                </label>
+                            </p>
+
+                            <p class="form-row form-row-wide">
+                                <label for="password1">
+
+                                    <i class="im im-icon-Lock-2"></i>
+                                    <input id="registerPassword1" class="input-text" type="password" name="password1" placeholder="סיסמא" />
+                                </label>
+                            </p>
+
+                            <p class="form-row form-row-wide">
+                                <label for="password2">
+
+                                    <i class="im im-icon-Lock-2"></i>
+                                    <input id="registerPassword2" class="input-text" type="password" name="password2"placeholder="אשר סיסמא" />
+                                </label>
+                            </p>
+                            <div class="row-form" style="text-align:center">
+                                <input type="button" class="button border fw margin-top-10" name="register" value="הירשם" onclick="activateAjaxRegister()" />
+                            </div>
+                          
+                        </form>
+                    </div>      
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--</div>-->
+    <!-- Sign In Popup / End -->
+
+    <!-- Scripts
+    ================================================== -->
+    <script type="text/javascript" src="scripts/custom.js"></script>
+</body>
+</html>
